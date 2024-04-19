@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Display</title>
+</head>
+<body>
+    <div>
+    <h1>Uploaded File</h1>
+    {% if file_path.endswith('.jpg') or file_path.endswith('.png') or file_path.endswith('.jpeg') %}
+        <img src="{{ url_for('static', filename=file_path) }}" alt="Uploaded Image" >
+    {% else %}
+        <p>File content: {{ file_path }}</p>
+    {% endif %}
+    </div>
+    <div>
+        <button onclick="{window.location.href = '/success'}">
+            Predict
+        </button>
+    </div>
+</body>
+</html>
