@@ -59,4 +59,4 @@ def success():
     if model == "Melanoma":
         return "Melanoma"
     else:
-        return 
+        return "Error finding Model"
