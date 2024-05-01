@@ -25,6 +25,9 @@ def index():
     select = request.form.get('dropdown')
     global model 
     model = select
+    print("")
+    print(model)
+    print("")
     try:  
         return render_template('index1.html', model = select)
     except:
@@ -59,18 +62,18 @@ def success():
     if model == "Pneumonia":
         print(pneumonia(filepath))
         if pneumonia(filepath) < 0.5:
-            return "You have low chances of having Pneumonia"
+            return render_template('pneumonia.html', img = 'static/nopneumonia.jpg', message = "The patient probably dont have Pneumonia")
         if pneumonia(filepath)>= 0.5:
-            return "You have good chances of having Pneumonia. Please consult a doctor"
+            return render_template('pneumonia.html', img = 'static/yespneumonia.jpeg', message = "The patient probably have Pneumonia")
     if model == "Brain Tumor":
         print(braintumor(filepath))
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][0]:
-            return "You have a good chance of having Glioma Tumor. Please consult a doctor"
+            return render_template('pneumonia.html', img = 'static/glioma.jpg', message = "The patient has a good chance of having Glioma Tumor.")
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][1]:
-            return "You have a good chance of having meningioma Tumor. Please consult a doctor"
+            return render_template('pneumonia.html', img = 'static/braintumor1.webp', message = "The patient has a good chance of having meningioma Tumor.")
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][2]:
-            return "You have a good chance of having no Tumor"
+            return render_template('pneumonia.html', img = 'static/nopneumonia.jpg', message = "The patient has a good chance of having no Tumor")
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][3]:
-            return "You have a good chance of having pituitary Tumor. Please consult a doctor"
+            return render_template('pneumonia.html', img = 'static/pitutary.jpg', message = "The patient has a good chance of having pituitary Tumor.")
     else:
         return "Error finding Model"

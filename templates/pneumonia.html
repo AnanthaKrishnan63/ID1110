@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: #2E3138;
+            /* overflow: hidden; */
+        }
+        .img{
+            text-align: center;
+        }
+        .image{
+            display: block;
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .para{
+            text-align: center;
+            font-weight: bold;
+            font-size: 32px;
+            color: whitesmoke;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <div class="img">
+        <img src= {{img}} alt="yea" class="image">
+    </div>
+    <div class="para">
+        <p> {{message}} </p>
+    </div>
+</body>
+</html>
