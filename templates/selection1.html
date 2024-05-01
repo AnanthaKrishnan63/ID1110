@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styleschat.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.jpg">
+    <style>
+        /* body{
+            background-color: #1F2041;
+        } */
+    </style>
+    <title>Froject</title>
+</head>
+<body>
+    <div class="header">
+        <h1> "Welcome to MediScan: Your Medical Imaging Assist"</h1>
+    </div>
+    <div class="test">
+        <div class="container" id="selection">
+            <div class="dropdown">
+                <form action="{{url_for('index')}}" method="POST">
+                    <select name="dropdown" id="selection">
+                        <option value="Pneumonia">Pneumonia</option>
+                        <option value="Brain Tumor"> Brain Tumor</option>
+                    </select>
+                    <br>
+                    <br>    
+                    <button id="selectionButton" onclick="{window.location.href= '/upload'}">Select</button>
+                </form>
+            </div>
+        </div>
+        <!-- <div class="quote">
+            <blockquote class="blockquote">
+            <span class="small-text">THE&nbsp;EZRA&nbsp;ADVANTAGE<br></span>
+            <br>
+            <span class="h2 serif">Early cancer detection has an 80% <br>survival rate,compared to less than <br>20% for late-stage cancer.<br></span>
+            <br><br><span class="small-text serif advantage-stats-disclaimer">Statistics from the<br>American Cancer Society</span>
+            </blockquote>
+        </div> -->
+    </div>
+</body>
+</html>

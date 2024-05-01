@@ -1,25 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
+    width: 100%;
+    min-height: 900px;
+    margin: 3em auto;
+    display: grid;
+    place-items: center;
+    /* min-height: 100vh; */
+    min-height: 100%;
+    /* margin: 0; */
+    /* padding: 80px; */
+    background-color: #2E3138;
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    box-sizing: border-box;
+    /* background: linear-gradient(35deg, red, purple); */
+    /* background-color: #1F2041; */
+    /* background: rgb(247, 202, 201);
+    background: -moz-linear-gradient(-45deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);
+    background: linear-gradient(135deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%); */
+    font-family:Tahoma,sans-serif;
+    letter-spacing: 1px;
     text-align: center;
+    overflow: hidden;
+    /* display: flex; /* Use flexbox */
+    /* justify-content: center; /* Horizontally center the content */
+    /* align-items: center; Vertically center the content */
+} */ */
+.test{
+    overflow: auto;
+    position: relative;
 }
+.quote{
+    float: left;
+    width: 50%;
+}
+/* .dropdown{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);    
+} */
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #dca3a3;
+    /* max-width: 800px; */
+    margin: 100px auto;
+    background-color:#2E3138;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #494e5b;
+    text-align: center;
+    padding-left:40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 h1 {
-    color: #333;
+    text-align: center;
+    color: #ffffff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-p {
-    color: black;
+h4{
+    text-align: center;
+    color: #ffffff;
+    font-family:Allura;
+}
+p,h3 {
+    color: white;
     margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
+
 img {
     max-width: 100%;
     border-radius: 5px;
@@ -28,7 +74,7 @@ img {
 input[type="file"] {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color:#6C6F7D ;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -42,19 +88,64 @@ label.upload-btn {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 label.upload-btn:hover {
-    background-color: #0056b3;
+    background-color: RGB (248, 226, 225);
 }
 input[type="submit"] {
     padding: 10px 20px;
-    background-color: #28a745;
-    color: #fff;
+    background-color: RGB (248, 226, 225);
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 95px;
+    height: 35px;
+    font-size: 20px;
+    padding-top:7px;
+    padding-bottom:30px;
 }
 input[type="submit"]:hover {
-    background-color: #218838;
+    background-color: #494e5b;
 }
+button{
+    width: 75px;
+    height: 35px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+/* blockquote{
+    padding-top: 96px;
+    padding-bottom: 96px;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block; 
+    border: 2px solid #8d99ae;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    padding-right: 48px;
+    padding-left: 48px;
+} */
+#selection {
+    width: 200px; /* Set the width of the selection box */
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 30px; /* Add padding to the selection box */
+    font-size: 16px; /* Set the font size */
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    border: 1px solid #494e5b ;
+    border-radius: 5px; /* Add border radius for rounded corners */
+    /* background-color: #f8f8f8 ; Set background color */
+    background: #2E3138; /* Linear gradient background */;
+    color:white ;
+  }
+   
+
+  
+  
+    
