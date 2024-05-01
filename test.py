@@ -57,14 +57,16 @@ def upload_file():
             # return redirect("http://127.0.0.1:5000/success")
             return render_template('display.html', file_path=filename)
 
+# Route for displaying the prediction result
+
 @app.route("/success")
 def success():
     if model == "Pneumonia":
         print(pneumonia(filepath))
         if pneumonia(filepath) < 0.5:
-            return render_template('pneumonia.html', img = 'static/nopneumonia.jpg', message = "The patient probably dont have Pneumonia")
+            return render_template('pneumonia.html', img = 'static/nopneumonia.jpg', message = "The patient probably doesn't have Pneumonia")
         if pneumonia(filepath)>= 0.5:
-            return render_template('pneumonia.html', img = 'static/yespneumonia.jpeg', message = "The patient probably have Pneumonia")
+            return render_template('pneumonia.html', img = 'static/yespneumonia.jpeg', message = "The patient probably has Pneumonia")
     if model == "Brain Tumor":
         print(braintumor(filepath))
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][0]:
