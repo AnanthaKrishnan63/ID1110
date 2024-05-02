@@ -55,10 +55,9 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            print("")
             print(filepath)
-            # return redirect(url_for('download_file', name=filename))
-            # print(file.filename)
-            # return redirect("http://127.0.0.1:5000/success")
+            print("")
             return render_template('display.html', file_path=filename)
 
 # Route for displaying the prediction result
@@ -66,13 +65,17 @@ def upload_file():
 @app.route("/success")
 def success():
     if model == "Pneumonia":
+        print("")
         print(pneumonia(filepath))
+        print("")
         if pneumonia(filepath) < 0.5:
             return render_template('pneumonia.html', img = 'static/nopneumonia.jpg', message = "The patient probably doesn't have Pneumonia")
         if pneumonia(filepath)>= 0.5:
             return render_template('pneumonia.html', img = 'static/yespneumonia.jpeg', message = "The patient probably has Pneumonia")
     if model == "Brain Tumor":
+        print("")
         print(braintumor(filepath))
+        print("")
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][0]:
             return render_template('pneumonia.html', img = 'static/glioma.jpg', message = "The patient has a good chance of having Glioma Tumor.")
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][1]:
@@ -82,4 +85,4 @@ def success():
         if max(braintumor(filepath)[0]) == braintumor(filepath)[0][3]:
             return render_template('pneumonia.html', img = 'static/pitutary.jpg', message = "The patient has a good chance of having pituitary Tumor.")
     else:
-        return "Error finding Model"
+        return "Error finding Model. Please try again"
